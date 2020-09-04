@@ -22,7 +22,7 @@
             "containers":[
                {
                   "name":"green",
-                  "image":"nakotisanthosh/Udacitycap",
+                  "image":"nakotisanthosh/udacitycap",
                   "ports":[
                      {
                         "name":"http-server",
