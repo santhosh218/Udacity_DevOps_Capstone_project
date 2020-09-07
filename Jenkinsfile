@@ -12,7 +12,7 @@ pipeline {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						docker build --tag=udacitycap .
+						docker build --tag=udacitycap:v1 .
 					'''
 				}
 			}
@@ -23,8 +23,8 @@ pipeline {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
 						docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-						docker image tag udacitycap nakotisanthosh/udacitycap
-						docker push nakotisanthosh/udacitycap
+						docker image tag udacitycap nakotisanthosh/udacitycap:v1
+						docker push nakotisanthosh/udacitycap:v1
 					'''
 				}
 			}
@@ -71,8 +71,8 @@ pipeline {
 		}
 
 		stage('Wait user approve') {
-            steps {
-                input "Ready to redirect traffic to green?"
+            		steps {
+                		input "Ready to redirect traffic to green?"
             }
         }
 
