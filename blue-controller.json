@@ -23,6 +23,7 @@
                {
                   "name":"blue",
                   "image":"nakotisanthosh/udacitycap:v1",
+                  "imagePullPolicy": "Always",
                   "ports":[
                      {
                         "name":"http-server",
