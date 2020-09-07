@@ -1,5 +1,5 @@
 {
-   "kind":"ReplicationController",
+   "kind":"Deployment",
    "apiVersion":"v1",
    "metadata":{
       "name":"green",
@@ -23,6 +23,7 @@
                {
                   "name":"green",
                   "image":"nakotisanthosh/udacitycap:v1",
+                  "imagePullPolicy": "Always",
                   "ports":[
                      {
                         "name":"http-server",
