@@ -12,10 +12,10 @@
       "selector":{
          "matchLabels":{
             "labels":{
-               "app":"blue
+               "app":"green"
             }
          }
-      }
+      },
       "template":{
          "metadata":{
             "labels":{
